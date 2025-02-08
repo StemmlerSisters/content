@@ -4,7 +4,7 @@ slug: Web/JavaScript/Guide/Expressions_and_operators
 page-type: guide
 ---
 
-{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Functions", "Web/JavaScript/Guide/Numbers_and_dates")}}
+{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Functions", "Web/JavaScript/Guide/Numbers_and_strings")}}
 
 This chapter describes JavaScript's expressions and operators, including assignment, comparison, arithmetic, bitwise, logical, string, ternary and more.
 
@@ -831,8 +831,8 @@ The shorthand assignment operator `+=` can also be used to concatenate strings.
 For example,
 
 ```js
-let mystring = "alpha";
-mystring += "bet"; // evaluates to "alphabet" and assigns this value to mystring.
+let myString = "alpha";
+myString += "bet"; // evaluates to "alphabet" and assigns this value to myString.
 ```
 
 ## Conditional (ternary) operator
@@ -1024,9 +1024,9 @@ const myString = new String("coral");
 "length" in myString; // returns true
 
 // Custom objects
-const mycar = { make: "Honda", model: "Accord", year: 1998 };
-"make" in mycar; // returns true
-"model" in mycar; // returns true
+const myCar = { make: "Honda", model: "Accord", year: 1998 };
+"make" in myCar; // returns true
+"model" in myCar; // returns true
 ```
 
 ### instanceof
@@ -1038,16 +1038,16 @@ if the specified object is of the specified object type. The syntax is:
 object instanceof objectType
 ```
 
-where `object` is the object to test against `objectType`, and `objectType` is a constructor representing a type, such as {{jsxref("Date")}} or {{jsxref("Array")}}.
+where `object` is the object to test against `objectType`, and `objectType` is a constructor representing a type, such as {{jsxref("Map")}} or {{jsxref("Array")}}.
 
 Use `instanceof` when you need to confirm the type of an object at runtime.
 For example, when catching exceptions, you can branch to different exception-handling code depending on the type of exception thrown.
 
-For example, the following code uses `instanceof` to determine whether `theDay` is a `Date` object. Because `theDay` is a `Date` object, the statements in the `if` statement execute.
+For example, the following code uses `instanceof` to determine whether `obj` is a `Map` object. Because `obj` is a `Map` object, the statements inside the `if` block execute.
 
 ```js
-const theDay = new Date(1995, 12, 17);
-if (theDay instanceof Date) {
+const obj = new Map();
+if (obj instanceof Map) {
   // statements to execute
 }
 ```
@@ -1070,8 +1070,8 @@ this.propertyName;
 Suppose a function called `validate` validates an object's `value` property, given the object and the high and low values:
 
 ```js
-function validate(obj, lowval, hival) {
-  if (obj.value < lowval || obj.value > hival) {
+function validate(obj, lowVal, highVal) {
+  if (obj.value < lowVal || obj.value > highVal) {
     console.log("Invalid Value!");
   }
 }
@@ -1148,4 +1148,4 @@ super(args); // calls the parent constructor.
 super.functionOnParent(args);
 ```
 
-{{PreviousNext("Web/JavaScript/Guide/Functions", "Web/JavaScript/Guide/Numbers_and_dates")}}
+{{PreviousNext("Web/JavaScript/Guide/Functions", "Web/JavaScript/Guide/Numbers_and_strings")}}

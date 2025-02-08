@@ -254,13 +254,6 @@
       "properties": ["Navigator.credentials"],
       "events": []
     },
-    "CSS Counter Styles": {
-      "overview": ["CSS Counter Styles"],
-      "interfaces": ["CSSCounterStyleRule"],
-      "methods": [],
-      "properties": [],
-      "events": []
-    },
     "CSS Font Loading API": {
       "overview": ["CSS Font Loading API"],
       "interfaces": ["FontFace", "FontFaceSet", "FontFaceSetLoadEvent"],
@@ -388,6 +381,14 @@
         "Window: deviceorientationabsolute",
         "Window: devicemotion"
       ]
+    },
+    "Device Posture API": {
+      "overview": ["Device Posture API"],
+      "guides": [],
+      "interfaces": ["DevicePosture"],
+      "methods": ["Navigator.devicePosture"],
+      "properties": [],
+      "events": []
     },
     "Document Picture-in-Picture API": {
       "overview": ["Document Picture-in-Picture API"],
@@ -811,10 +812,11 @@
         "Element: focus",
         "Element: select",
         "Element: show",
-        "HTMLDetailsElement: toggle",
         "HTMLDialogElement: cancel",
         "HTMLDialogElement: close",
         "HTMLElement: input",
+        "HTMLElement: beforetoggle",
+        "HTMLElement: toggle",
         "HTMLFormElement: reset",
         "HTMLFormElement: submit",
         "HTMLInputElement: change",
@@ -921,7 +923,7 @@
     },
     "Ink API": {
       "overview": ["Ink API"],
-      "interfaces": ["Ink", "InkPresenter"],
+      "interfaces": ["DelegatedInkTrailPresenter", "Ink"],
       "methods": [],
       "properties": ["Navigator.ink"],
       "events": []
@@ -951,6 +953,17 @@
       "methods": [],
       "properties": [],
       "events": []
+    },
+    "Invoker Commands API": {
+      "overview": ["Invoker Commands API"],
+      "guides": [],
+      "interfaces": ["CommandEvent"],
+      "methods": [],
+      "properties": [
+        "HTMLButtonElement.commandForElement",
+        "HTMLButtonElement.command"
+      ],
+      "events": ["HTMLElement: command"]
     },
     "Keyboard API": {
       "overview": ["Keyboard API"],
@@ -1029,6 +1042,9 @@
       ],
       "methods": ["HTMLVideoElement.getVideoPlaybackQuality()"],
       "properties": [
+        "HTMLMediaElement.buffered",
+        "HTMLMediaElement.seekable",
+        "HTMLMediaElement.srcObject",
         "AudioTrack.sourceBuffer",
         "VideoTrack.sourceBuffer",
         "TextTrack.sourceBuffer"
@@ -1331,8 +1347,16 @@
     },
     "Screen Capture API": {
       "overview": ["Screen Capture API"],
-      "guides": ["/docs/Web/API/Screen_Capture_API/Using_Screen_Capture"],
-      "interfaces": ["CaptureController"],
+      "guides": [
+        "/docs/Web/API/Screen_Capture_API/Using_Screen_Capture",
+        "/docs/Web/API/Screen_Capture_API/Element_Region_Capture"
+      ],
+      "interfaces": [
+        "BrowserCaptureMediaStreamTrack",
+        "CaptureController",
+        "CropTarget",
+        "RestrictionTarget"
+      ],
       "methods": ["MediaDevices.getDisplayMedia()"],
       "properties": [
         "MediaTrackConstraints.displaySurface",
@@ -1761,8 +1785,8 @@
       "properties": [],
       "events": []
     },
-    "View Transitions API": {
-      "overview": ["View Transitions API"],
+    "View Transition API": {
+      "overview": ["View Transition API"],
       "guides": ["/docs/Web/API/View_Transitions_API/Using"],
       "interfaces": ["ViewTransition"],
       "methods": ["Document.startViewTransition()"],
@@ -2103,7 +2127,7 @@
         "HIDConnectionEvent"
       ],
       "methods": [],
-      "properties": ["Navigator.hid"],
+      "properties": ["Navigator.hid", "WorkerNavigator.hid"],
       "events": []
     },
     "Web Locks API": {

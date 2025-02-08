@@ -21,7 +21,7 @@ spec-urls:
   - https://html.spec.whatwg.org/multipage/nav-history-apis.html#the-notrestoredreasons-interface
 ---
 
-{{DefaultAPISidebar("Performance API")}}
+{{DefaultAPISidebar("Performance API")}}{{AvailableInWorkers}}
 
 The Performance API is a group of standards used to measure the performance of web applications.
 
@@ -64,7 +64,7 @@ The following interfaces are present in the Performance API:
 - {{domxref("PerformanceEntry")}}
   - : An entry on the performance timeline encapsulating a single performance metric. All performance metrics inherit from this interface.
 - {{domxref("PerformanceEventTiming")}}
-  - : Measures latency of events and first input delay (FID).
+  - : Measures latency of events and {{Glossary("Interaction to Next Paint")}} (INP).
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
   - : Provides metrics on [long animation frames (LoAFs)](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#what_is_a_long_animation_frame) that occupy rendering and block other tasks from being executed.
 - {{domxref("PerformanceLongTaskTiming")}}
@@ -112,4 +112,4 @@ The following guides help you to understand key concepts of the Performance API 
 ## See also
 
 - [Web performance](/en-US/docs/Web/Performance)
-- [Learn: Web performance](/en-US/docs/Learn/Performance)
+- [Learn: Web performance](/en-US/docs/Learn_web_development/Extensions/Performance)

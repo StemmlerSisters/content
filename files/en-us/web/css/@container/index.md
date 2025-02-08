@@ -148,6 +148,10 @@ The following descriptors can be used within the container condition:
 - `width`
   - : The width of the container expressed as a {{cssxref("length")}} value.
 
+## Formal syntax
+
+{{csssyntax}}
+
 ## Examples
 
 ### Setting styles based on a container's size
@@ -260,8 +264,6 @@ The following query evaluates to true and applies the declared style if the cont
 
 ### Container style queries
 
-{{CSSRef}}{{SeeCompatTable}}
-
 Container queries can also evaluate the computed style of the container element. A _container style query_ is a `@container` query that uses one or more `style()` functional notations. The boolean syntax and logic combining style features into a style query is the same as for [CSS feature queries](/en-US/docs/Web/CSS/CSS_conditional_rules/Using_feature_queries).
 
 ```css
@@ -297,7 +299,7 @@ The following container query checks if the {{cssxref("computed_value")}} of the
 ```
 
 > [!NOTE]
-> If a custom property has a value of `blue`, the equivalent hexidecimal code `#0000ff` will not match unless the property has been defined as a color with {{cssxref("@property")}} so the browser can properly compare computed values.
+> If a custom property has a value of `blue`, the equivalent hexadecimal code `#0000ff` will not match unless the property has been defined as a color with {{cssxref("@property")}} so the browser can properly compare computed values.
 
 Style features that query a shorthand property are true if the computed values match for each of its longhand properties, and false otherwise. For example, `@container style(border: 2px solid red)` will resolve to true if all 12 longhand properties (`border-bottom-style`, etc.) that make up that shorthand are true.
 

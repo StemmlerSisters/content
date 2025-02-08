@@ -65,7 +65,7 @@ In Manifest V2, a source for a script directive is considered secure if it meets
 - Remote sources must not use wildcards for any domains in the [public suffix list](https://publicsuffix.org/list/) (so `*.co.uk` and `*.blogspot.com` are not allowed, although `*.foo.blogspot.com` is permitted).
 - All sources must specify a host.
 - The only permitted schemes for sources are `blob:`, `filesystem:`, `moz-extension:`, `https:`, and `wss:`.
-- The only permitted [keywords](/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/Sources#sources) are: `'none'`, `'self'`, `'unsafe-eval'`, and `'wasm-unsafe-eval'`.
+- The only permitted [keywords](/en-US/docs/Web/HTTP/Headers/Content-Security-Policy#fetch_directive_syntax) are: `'none'`, `'self'`, `'unsafe-eval'`, and `'wasm-unsafe-eval'`.
 
 ## object-src directive
 
@@ -229,7 +229,7 @@ Policy that omits the `"object-src"` directive:
 "content_security_policy": "script-src 'self' https://*.jquery.com;"
 ```
 
-However, this is only invalid in browsers that support obsolete [plugins](/en-US/docs/Glossary/Plugin). See [object-src directive](#object-src_directive) for more details..
+However, this is only invalid in browsers that support obsolete [plugins](/en-US/docs/Glossary/Plugin). See [object-src directive](#object-src_directive) for more details.
 
 Policy that omits the `"self"` keyword in the `"script-src"` directive:
 

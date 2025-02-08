@@ -54,7 +54,7 @@ All content that is available to non-assistive technology users must be made ava
 
 It would have been much simpler to use the native {{HTMLElement('progress')}} element instead:
 
-```HTML
+```html
 <progress id="percent-loaded" value="75" max="100">75 %</progress>
 ```
 
@@ -68,7 +68,7 @@ It would have been much simpler to use the native {{HTMLElement('progress')}} el
 
 Like any other web technology, there are varying degrees of support for ARIA. Support is based on the operating system and browser being used, as well as the kind of assistive technology interfacing with it. In addition, the version of the operating system, browser, and assistive technology are contributing factors. Older software versions may not support certain ARIA roles, have only partial support, or misreport its functionality.
 
-It is also important to acknowledge that some people who rely on assistive technology are reluctant to upgrade their software, for fear of losing the ability to interact with their computer and browser. Because of this, it is important to [use semantic HTML elements](/en-US/docs/Learn/Accessibility/HTML) whenever possible, as semantic HTML has far better support for assistive technology.
+It is also important to acknowledge that some people who rely on assistive technology are reluctant to upgrade their software, for fear of losing the ability to interact with their computer and browser. Because of this, it is important to [use semantic HTML elements](/en-US/docs/Learn_web_development/Core/Accessibility/HTML) whenever possible, as semantic HTML has far better support for assistive technology.
 
 It is also important to test your authored ARIA with actual assistive technology. This is because browser emulators and simulators are not really effective for testing full support. Similarly, proxy assistive technology solutions are not sufficient to fully guarantee functionality.
 

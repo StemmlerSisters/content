@@ -7,7 +7,7 @@ browser-compat: http.headers.Content-Security-Policy.script-src
 
 {{HTTPSidebar}}
 
-The HTTP {{HTTPHeader("Content-Security-Policy")}} (CSP) **`script-src`** directive specifies valid sources for JavaScript. This includes not only URLs loaded directly into {{HTMLElement("script")}} elements, but also things like inline script event handlers (`onclick`) and [XSLT stylesheets](/en-US/docs/Web/XSLT) which can trigger script execution.
+The HTTP {{HTTPHeader("Content-Security-Policy")}} (CSP) **`script-src`** directive specifies valid sources for JavaScript. This includes not only URLs loaded directly into {{HTMLElement("script")}} elements, but also things like inline script event handlers (`onclick`) and [XSLT stylesheets](/en-US/docs/Web/XML/XSLT) which can trigger script execution.
 
 <table class="properties">
   <tbody>
@@ -42,9 +42,7 @@ This directive may have one of the following values:
   - : No resources of this type may be loaded. The single quotes are mandatory.
 - `<source-expression-list>`
 
-  - : A space-separated list of _source expression_ values. Resources of this type may be loaded if they match any of the given source expressions.
-
-    Source expressions are specified as keyword values or URL patterns: the syntax for each source expression is given in [CSP Source Values](/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/Sources).
+  - : A space-separated list of _source expression_ values. Resources of this type may be loaded if they match any of the given source expressions. For this directive, any of the source expression values listed in [Fetch directive syntax](/en-US/docs/Web/HTTP/Headers/Content-Security-Policy#fetch_directive_syntax) are applicable.
 
 ## Examples
 

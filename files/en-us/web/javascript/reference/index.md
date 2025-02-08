@@ -62,6 +62,7 @@ If you are new to JavaScript, start with the [guide](/en-US/docs/Web/JavaScript/
 - {{jsxref("BigInt")}}
 - {{jsxref("Math")}}
 - {{jsxref("Date")}}
+- {{jsxref("Temporal")}}
 
 ### Text processing
 
@@ -206,8 +207,8 @@ If you are new to JavaScript, start with the [guide](/en-US/docs/Web/JavaScript/
 - {{jsxref("Operators/Property_accessors", "Property accessors", "", 1)}}
 - {{jsxref("Operators/Optional_chaining", "?.")}}
 - {{jsxref("Operators/new", "new")}}
-- {{jsxref("Operators/new%2Etarget", "new.target")}}
-- {{jsxref("Operators/import%2Emeta", "import.meta")}}
+- {{jsxref("Operators/new.target", "new.target")}}
+- {{jsxref("Operators/import.meta", "import.meta")}}
 - {{jsxref("Operators/super", "super")}}
 - {{jsxref("Operators/import", "import()")}}
 

@@ -25,6 +25,9 @@ In addition to the basic HTML global attributes, the following global attributes
   - : Associates a positioned element with an anchor element. The attribute's value is the [`id`](/en-US/docs/Web/HTML/Global_attributes/id) value of the element you want to anchor the positioned element to. The element can then be positioned [using CSS anchor positioning](/en-US/docs/Web/CSS/CSS_anchor_positioning/Using).
 - [`autocapitalize`](/en-US/docs/Web/HTML/Global_attributes/autocapitalize)
   - : Controls whether inputted text is automatically capitalized and, if so, in what manner.
+- [`autocorrect`](/en-US/docs/Web/HTML/Global_attributes/autocorrect)
+  - : Controls whether input text is automatically corrected for spelling errors.
+    This can be applied to elements that have editable text except for {{HTMLElement("input")}} elements with the attribute: [`type="password"`](/en-US/docs/Web/HTML/Element/input/password), [`type="email"`](/en-US/docs/Web/HTML/Element/input/email), or [`type="url"`](/en-US/docs/Web/HTML/Element/input/url).
 - [`autofocus`](/en-US/docs/Web/HTML/Global_attributes/autofocus)
   - : Indicates that an element is to be focused on page load, or as soon as the {{HTMLElement("dialog")}} it is part of is displayed. This attribute is a boolean, initially false.
 - [`class`](/en-US/docs/Web/HTML/Global_attributes/class)
@@ -122,14 +125,14 @@ In addition to the basic HTML global attributes, the following global attributes
 
 - [`virtualkeyboardpolicy`](/en-US/docs/Web/HTML/Global_attributes/virtualkeyboardpolicy) {{Experimental_Inline}}
 
-  - : An [enumerated](/en-US/docs/Glossary/Enumerated) attribute used to control the on-screen virtual keyboard behavior on devices such as tablets, mobile phones, or other devices where a hardware keyboard may not be available for elements that its content is editable (for example, it is an {{htmlelement("input")}} or {{htmlelement("textarea")}} element, or an element with the [`contenteditable`](/en-US/docs/Web/HTML/Global_attributes/contenteditable) attribute set).
+  - : An {{Glossary("enumerated")}} attribute used to control the on-screen virtual keyboard behavior on devices such as tablets, mobile phones, or other devices where a hardware keyboard may not be available for elements that its content is editable (for example, it is an {{htmlelement("input")}} or {{htmlelement("textarea")}} element, or an element with the [`contenteditable`](/en-US/docs/Web/HTML/Global_attributes/contenteditable) attribute set).
 
     - `auto` or an _empty string_, which automatically shows the virtual keyboard when the element is focused or tapped.
     - `manual`, which decouples focus and tap on the element from the virtual keyboard's state.
 
 - [`writingsuggestions`](/en-US/docs/Web/HTML/Global_attributes/writingsuggestions)
 
-  - : Used to control the behavior of the browser's writing suggestions in an input field, a section of a page, or the entire page.
+  - : An {{Glossary("enumerated")}} attribute indicating if browser-provided writing suggestions should be enabled under the scope of the element or not.
 
     - `false`, which disables the browser's writing suggestions.
     - `true` or an _empty string_, which enables writing suggestions.

@@ -16,7 +16,7 @@ This article provides information about the changes in Firefox 131 that affect d
 
 ### JavaScript
 
-- Support for synchronous iterator helpers has been added, including: {{jsxref("Iterator.prototype.drop()")}}, {{jsxref("Iterator.prototype.every()")}}, {{jsxref("Iterator.prototype.filter()")}}, {{jsxref("Iterator.prototype.find()")}}, {{jsxref("Iterator.prototype.flatMap()")}}, {{jsxref("Iterator.prototype.forEach()")}}, {{jsxref("Iterator.prototype.map()")}}, {{jsxref("Iterator.prototype.reduce()")}}, {{jsxref("Iterator.prototype.some()")}}, and {{jsxref("Iterator.prototype.take()")}}. These helpers allow `Array`-like operations on iterators without having to create intermediate `Array` objects. They can also be used with very large data sets where creating an intermediate `Array` would not even be possible. For more information, see [Iterator helpers](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator#iterator_helpers) in the `Iterator` interface. ([Firefox bug 1896390](https://bugzil.la/1896390)).
+- Support for synchronous iterator helper methods has been added, including: {{jsxref("Iterator.prototype.drop()")}}, {{jsxref("Iterator.prototype.every()")}}, {{jsxref("Iterator.prototype.filter()")}}, {{jsxref("Iterator.prototype.find()")}}, {{jsxref("Iterator.prototype.flatMap()")}}, {{jsxref("Iterator.prototype.forEach()")}}, {{jsxref("Iterator.prototype.map()")}}, {{jsxref("Iterator.prototype.reduce()")}}, {{jsxref("Iterator.prototype.some()")}}, and {{jsxref("Iterator.prototype.take()")}}. These helpers allow `Array`-like operations on iterators without having to create intermediate `Array` objects. They can also be used with very large data sets where creating an intermediate `Array` would not even be possible. For more information, see [Iterator helper methods](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator#iterator_helper_methods) in the `Iterator` interface. ([Firefox bug 1896390](https://bugzil.la/1896390)).
 
 ### HTTP
 
@@ -33,7 +33,7 @@ This article provides information about the changes in Firefox 131 that affect d
 
 ### WebAssembly
 
-- The new exception reference with the value of `exnref` can now be used to help with [exception handling](/en-US/docs/WebAssembly/JavaScript_interface/Exception) between WebAssembly and JavaScript in both directions. ([Firefox bug 1908375](https://bugzil.la/1908375)).
+- The new exception reference with the value of `exnref` can now be used to help with [exception handling](/en-US/docs/WebAssembly/Reference/JavaScript_interface/Exception) between WebAssembly and JavaScript in both directions. ([Firefox bug 1908375](https://bugzil.la/1908375)).
 
 ### WebDriver conformance (WebDriver BiDi, Marionette)
 

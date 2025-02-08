@@ -95,7 +95,7 @@ The keyword values can be grouped into six value categories.
 
       - : The element lays out its contents using flow layout (block-and-inline layout).
 
-        If its outer display type is `inline`, and it is participating in a block or inline formatting context, then it generates an inline box. Otherwise it generates a block container box.
+        If its outer display type is `inline`, and it is participating in a block or inline formatting context, then it generates an inline box. Otherwise it generates a block box.
 
         Depending on the value of other properties (such as {{CSSxRef("position")}}, {{CSSxRef("float")}}, or {{CSSxRef("overflow")}}) and whether it is itself participating in a block or inline formatting context, it either establishes a new [block formatting context](/en-US/docs/Web/CSS/CSS_display/Block_formatting_context) (BFC) for its contents or integrates its contents into its parent formatting context.
 
@@ -121,7 +121,7 @@ The keyword values can be grouped into six value categories.
 A single value of `list-item` will cause the element to behave like a list item.
 This can be used together with {{CSSxRef("list-style-type")}} and {{CSSxRef("list-style-position")}}.
 
-`list-item` can also be combined with any {{CSSxRef("&lt;display-outside&gt;")}} keyword and the `flow` or `flow-root` {{CSSxRef("&lt;display-inside&gt;")}} keywords.
+`list-item` can also be combined with any {{CSSxRef("&lt;display-outside&gt;")}} keyword and the `flow` or `flow-root` {{CSSxRef("&lt;display-inside&gt;")}} keyword.
 
 > [!NOTE]
 > In browsers that support the multi-keyword syntax, if no inner value is specified, it will default to `flow`.
@@ -272,7 +272,6 @@ The individual pages for the different types of value that `display` can have se
 - [Box alignment in grid layout](/en-US/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)
 - [Grids, logical values and writing modes](/en-US/docs/Web/CSS/CSS_grid_layout/Grids_logical_values_and_writing_modes)
 - [CSS grid layout and accessibility](/en-US/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_accessibility)
-- [CSS grid layout and progressive enhancement](/en-US/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_progressive_enhancement)
 - [Realizing common layouts using grids](/en-US/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids)
 
 ### Animating display
@@ -299,7 +298,7 @@ For examples of transitioning the `display` property, see the [`@starting-style`
 
 ### display: none
 
-Using a `display` value of `none` on an element will remove it from the [accessibility tree](/en-US/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis). This will cause the element and all its descendant elements to no longer be announced by screen reading technology.
+Using a `display` value of `none` on an element will remove it from the [accessibility tree](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis). This will cause the element and all its descendant elements to no longer be announced by screen reading technology.
 
 If you want to visually hide the element, a more accessible alternative is to use [a combination of properties](https://webaim.org/techniques/css/invisiblecontent/) to remove it visually from the screen but still make it available to assistive technology such as screen readers.
 
@@ -307,14 +306,14 @@ While `display: none` hides content from the accessibility tree, elements that a
 
 ### display: contents
 
-Current implementations in some browsers will remove from the [accessibility tree](/en-US/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis) any element with a `display` value of `contents` (but descendants will remain). This will cause the element itself to no longer be announced by screen reading technology. This is incorrect behavior according to the [CSS specification](https://drafts.csswg.org/css-display/#valdef-display-contents).
+Current implementations in some browsers will remove from the [accessibility tree](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis) any element with a `display` value of `contents` (but descendants will remain). This will cause the element itself to no longer be announced by screen reading technology. This is incorrect behavior according to the [CSS specification](https://drafts.csswg.org/css-display/#valdef-display-contents).
 
 - [More accessible markup with display: contents | Hidde de Vries](https://hidde.blog/more-accessible-markup-with-display-contents/)
 - [Display: Contents Is Not a CSS Reset | Adrian Roselli](https://adrianroselli.com/2018/05/display-contents-is-not-a-css-reset.html)
 
 ### Tables
 
-In some browsers, changing the `display` value of a {{HTMLElement("table")}} element to `block`, `grid`, or `flex` will alter its representation in the [accessibility tree](/en-US/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis). This will cause the table to no longer be announced properly by screen reading technology.
+In some browsers, changing the `display` value of a {{HTMLElement("table")}} element to `block`, `grid`, or `flex` will alter its representation in the [accessibility tree](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis). This will cause the table to no longer be announced properly by screen reading technology.
 
 - [Short note on what CSS display properties do to table semantics — The Paciello Group](https://www.tpgi.com/short-note-on-what-css-display-properties-do-to-table-semantics/)
 - [Hidden content for better a11y | Go Make Things](https://gomakethings.com/hidden-content-for-better-a11y/)
@@ -335,7 +334,7 @@ In some browsers, changing the `display` value of a {{HTMLElement("table")}} ele
 
 In this example we have two block-level container elements, each one with three inline children. Below that, we have a select menu that allows you to apply different `display` values to the containers, allowing you to compare and contrast how the different values affect the element's layout, and that of their children.
 
-We've included {{cssxref("padding")}} and {{cssxref("background-color")}} on the containers and their children, so that it is easier to see the effect the display values are having.
+We have included {{cssxref("padding")}} and {{cssxref("background-color")}} on the containers and their children, so that it is easier to see the effect the display values are having.
 
 #### HTML
 
@@ -356,19 +355,33 @@ We've included {{cssxref("padding")}} and {{cssxref("background-color")}} on the
   <label for="display">Choose a display value:</label>
   <select id="display">
     <option selected>block</option>
+    <option>block flow</option>
     <option>inline</option>
-    <option>inline-block</option>
-    <option>inline flow-root</option>
-    <option>none</option>
-    <option>flex</option>
-    <option>inline-flex</option>
-    <option>inline flex</option>
-    <option>grid</option>
-    <option>inline-grid</option>
-    <option>inline grid</option>
+    <option>inline flow</option>
+    <option>flow</option>
+    <option>flow-root</option>
+    <option>block flow-root</option>
     <option>table</option>
     <option>block table</option>
+    <option>flex</option>
+    <option>block flex</option>
+    <option>grid</option>
+    <option>block grid</option>
     <option>list-item</option>
+    <option>block flow list-item</option>
+    <option>inline flow list-item</option>
+    <option>block flow-root list-item</option>
+    <option>inline flow-root list-item</option>
+    <option>contents</option>
+    <option>none</option>
+    <option>inline-block</option>
+    <option>inline flow-root</option>
+    <option>inline-table</option>
+    <option>inline table</option>
+    <option>inline-flex</option>
+    <option>inline flex</option>
+    <option>inline-grid</option>
+    <option>inline grid</option>
   </select>
 </div>
 ```
@@ -427,12 +440,20 @@ updateDisplay();
 
 Note that some multi-keyword values are added for illustration which have the following equivalents:
 
+- `block` = `block flow`
+- `inline` = `inline flow`
+- `flow` = `block flow`
+- `flow-root` = `block flow-root`
+- `table` = `block table`
+- `flex` = `block flex`
+- `grid` = `block grid`
+- `list-item` = `block flow list-item`
 - `inline-block` = `inline flow-root`
+- `inline-table` = `inline table`
 - `inline-flex` = `inline flex`
 - `inline-grid` = `inline grid`
-- `table` = `block table`
 
-You can find more examples in the pages for each separate display data type under [Grouped values](#grouped_values)
+You can find more examples in the pages for each separate display type under [Grouped values](#grouped_values).
 
 ## Specifications
 
@@ -444,7 +465,8 @@ You can find more examples in the pages for each separate display data type unde
 
 ## See also
 
-- [Block and inline layout in normal flow](/en-US/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow)
-- [Introduction to formatting contexts](/en-US/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts)
 - {{CSSxRef("visibility")}}, {{CSSxRef("float")}}, {{CSSxRef("position")}}
 - {{CSSxRef("grid")}}, {{CSSxRef("flex")}}
+- SVG {{SVGAttr("display")}} attribute
+- [Block and inline layout in normal flow](/en-US/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow)
+- [Introduction to formatting contexts](/en-US/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts)

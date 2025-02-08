@@ -2,7 +2,7 @@
 title: "console: timeStamp() static method"
 short-title: timeStamp()
 slug: Web/API/console/timeStamp_static
-page-type: web-api-instance-method
+page-type: web-api-static-method
 status:
   - non-standard
 browser-compat: api.console.timeStamp_static
@@ -17,7 +17,7 @@ You can optionally supply an argument to label the timestamp, and this label wil
 ## Syntax
 
 ```js-nolint
-timeStamp(label)
+console.timeStamp(label)
 ```
 
 ### Parameters

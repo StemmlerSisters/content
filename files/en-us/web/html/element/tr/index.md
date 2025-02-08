@@ -61,26 +61,28 @@ Four `<tr>` elements are used to create four table rows. Each row contains three
 
 ```html
 <table>
-  <tr>
-    <th scope="row">A</th>
-    <td>Alfa</td>
-    <td>AL fah</td>
-  </tr>
-  <tr>
-    <th scope="row">B</th>
-    <td>Bravo</td>
-    <td>BRAH voh</td>
-  </tr>
-  <tr>
-    <th scope="row">C</th>
-    <td>Charlie</td>
-    <td>CHAR lee</td>
-  </tr>
-  <tr>
-    <th scope="row">D</th>
-    <td>Delta</td>
-    <td>DELL tah</td>
-  </tr>
+  <tbody>
+    <tr>
+      <th scope="row">A</th>
+      <td>Alfa</td>
+      <td>AL fah</td>
+    </tr>
+    <tr>
+      <th scope="row">B</th>
+      <td>Bravo</td>
+      <td>BRAH voh</td>
+    </tr>
+    <tr>
+      <th scope="row">C</th>
+      <td>Charlie</td>
+      <td>CHAR lee</td>
+    </tr>
+    <tr>
+      <th scope="row">D</th>
+      <td>Delta</td>
+      <td>DELL tah</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
@@ -128,31 +130,35 @@ An additional table row (`<tr>`) is added as the first row of the table with col
 
 ```html
 <table>
-  <tr>
-    <th scope="col">Symbol</th>
-    <th scope="col">Code word</th>
-    <th scope="col">Pronunciation</th>
-  </tr>
-  <tr>
-    <th scope="row">A</th>
-    <td>Alfa</td>
-    <td>AL fah</td>
-  </tr>
-  <tr>
-    <th scope="row">B</th>
-    <td>Bravo</td>
-    <td>BRAH voh</td>
-  </tr>
-  <tr>
-    <th scope="row">C</th>
-    <td>Charlie</td>
-    <td>CHAR lee</td>
-  </tr>
-  <tr>
-    <th scope="row">D</th>
-    <td>Delta</td>
-    <td>DELL tah</td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Code word</th>
+      <th scope="col">Pronunciation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">A</th>
+      <td>Alfa</td>
+      <td>AL fah</td>
+    </tr>
+    <tr>
+      <th scope="row">B</th>
+      <td>Bravo</td>
+      <td>BRAH voh</td>
+    </tr>
+    <tr>
+      <th scope="row">C</th>
+      <td>Charlie</td>
+      <td>CHAR lee</td>
+    </tr>
+    <tr>
+      <th scope="row">D</th>
+      <td>Delta</td>
+      <td>DELL tah</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
@@ -423,7 +429,7 @@ th {
 
 ## See also
 
-- [Learn: HTML tables](/en-US/docs/Learn/HTML/Tables)
+- [Learn: HTML table basics](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics)
 - {{HTMLElement("caption")}}, {{HTMLElement("col")}}, {{HTMLElement("colgroup")}}, {{HTMLElement("table")}}, {{HTMLElement("tbody")}}, {{HTMLElement("td")}}, {{HTMLElement("tfoot")}}, {{HTMLElement("th")}}, {{HTMLElement("thead")}}: Other table-related elements
 - {{cssxref("background-color")}}: CSS property to set the background color of each row cell
 - {{cssxref("border")}}: CSS property to control borders of row cells

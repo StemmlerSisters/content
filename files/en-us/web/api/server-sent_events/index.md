@@ -34,6 +34,7 @@ To learn how to use server-sent events, see our article [Using server-sent event
 ### Tools
 
 - [Mercure: a real-time communication protocol (publish-subscribe) built on top of SSE](https://mercure.rocks/)
+- [Transmit: a native opinionated Server-Sent-Event (SSE) module built for AdonisJS](https://docs.adonisjs.com/guides/digging-deeper/transmit)
 - [EventSource polyfill for Node.js](https://github.com/EventSource/eventsource)
 - Remy Sharp's [EventSource polyfill](https://github.com/remy/polyfills/blob/master/EventSource.js)
 - Yaffle's [EventSource polyfill](https://github.com/Yaffle/EventSource)
@@ -42,7 +43,7 @@ To learn how to use server-sent events, see our article [Using server-sent event
 
 ### Related Topics
 
-- [Fetching data from the server](/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
+- [Learn: Making network requests with JavaScript](/en-US/docs/Learn_web_development/Core/Scripting/Network_requests)
 - [JavaScript](/en-US/docs/Web/JavaScript)
 - [WebSockets](/en-US/docs/Web/API/WebSockets_API)
 

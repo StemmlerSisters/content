@@ -1,7 +1,7 @@
 export default {
   "files/en-us/_redirects.txt": (filenames) => [
     `yarn content fix-redirects en-US`,
-    `yarn content validate-redirects en-us --strict`,
+    `yarn content validate-redirects en-US`,
   ],
   "!*.md": (filenames) => [
     `prettier --ignore-unknown --write ${filenames.join(" ")}`,
@@ -17,10 +17,8 @@ export default {
     `yarn filecheck ${filenames.join(" ")}`,
   ],
   "*": (filenames) => [`node scripts/log-url-issues.js`],
-  ".vscode/ignore-list.txt": (filenames) => [
-    `node scripts/sort_and_unique_file_lines.js .vscode/ignore-list.txt`,
+  ".vscode/dictionaries/*.txt": (filenames) => [
+    `node scripts/sort_and_unique_file_lines.js ${filenames.join(" ")}`,
   ],
-  ".vscode/terms-abbreviations.txt": (filenames) => [
-    `node scripts/sort_and_unique_file_lines.js .vscode/terms-abbreviations.txt`,
-  ],
+  "files/sidebars/*.yaml": (filenames) => [`yarn content fmt-sidebars`],
 };

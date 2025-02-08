@@ -18,7 +18,7 @@ To link an external stylesheet, you'd include a `<link>` element inside your {{H
 <link href="main.css" rel="stylesheet" />
 ```
 
-This simple example provides the path to the stylesheet inside an `href` attribute, and a [`rel`](/en-US/docs/Web/HTML/Attributes/rel) attribute with a value of `stylesheet`. The `rel` stands for "relationship", and is one of the key features of the `<link>` element — the value denotes how the item being linked to is related to the containing document.
+This example provides the path to the stylesheet inside an `href` attribute and a [`rel`](/en-US/docs/Web/HTML/Attributes/rel) attribute with a value of `stylesheet`. The `rel` stands for "relationship", and is one of the key features of the `<link>` element — the value denotes how the item being linked to is related to the containing document.
 
 There are a number of other common types you'll come across. For example, a link to the site's favicon:
 
@@ -170,7 +170,7 @@ This element includes the [global attributes](/en-US/docs/Web/HTML/Global_attrib
       </tbody>
     </table>
 
-- `blocking` {{Experimental_Inline}}
+- `blocking`
 
   - : This attribute explicitly indicates that certain operations should be blocked on the fetching of an external resource. It must only be used when the `rel` attribute contains `expect` or `stylesheet` keywords. The operations that are to be blocked must be a space-separated list of blocking tokens listed below.
     - `render`: The rendering of content on the screen is blocked.
@@ -201,14 +201,19 @@ This element includes the [global attributes](/en-US/docs/Web/HTML/Global_attrib
 
 - `fetchpriority`
 
-  - : Provides a hint of the relative priority to use when fetching a preloaded resource. Allowed values:
+  - : Provides a hint of the relative priority to use when fetching a resource of a particular type.
+    Allowed values:
 
     - `high`
-      - : Signals a high-priority fetch relative to other resources of the same type.
+      - : Fetch the resource at a high priority relative to other resources of the same type.
     - `low`
-      - : Signals a low-priority fetch relative to other resources of the same type.
+      - : Fetch the resource at a low priority relative to other resources of the same type.
     - `auto`
-      - : Default: Signals automatic determination of fetch priority relative to other resources of the same type.
+      - : Don't set a preference for the fetch priority.
+        This is the default.
+        It is used if no value or an invalid value is set.
+
+    See {{domxref("HTMLLinkElement.fetchPriority")}} for more information.
 
 - `href`
   - : This attribute specifies the {{glossary("URL")}} of the linked resource. A URL can be absolute or relative.

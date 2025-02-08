@@ -192,7 +192,7 @@ On the left is the central cone mosaic of standard vision, and on the right is t
 
 The red and the green cones join together to create luminance, which we can think of as lightness/darkness without regard to hue. Separately, the red, green, and blue cones allow for standard vision to perceive millions of colors. For accessibility, it's important to know that our brain processes luminance separately from color (hue and colorfulness).
 
-Luminance provides for fine vision details, including differentiating edges and text. Hue and colorfulness carry a third of the detail of luminance. Image data compression takes advantage of this fact. As an example, [h.264 video codec](/en-US/docs/Web/Media/Formats/Video_codecs) samples color at a fourth of the resolution of the luminance.
+Luminance provides for fine vision details, including differentiating edges and text. Hue and colorfulness carry a third of the detail of luminance. Image data compression takes advantage of this fact. As an example, [h.264 video codec](/en-US/docs/Web/Media/Guides/Formats/Video_codecs) samples color at a fourth of the resolution of the luminance.
 
 For accessibility, this means that luminance contrast is critically important for text. Color, as in hue and colorfulness, is important for _distinguishing_ items such as different lines on a map or bars in a graph.
 
@@ -237,7 +237,7 @@ Saturation is not brightness. Brightness refers to how much white or black is mi
 
 ### Saturation and luminance
 
-There is a loss of saturation at the extremes of luminance and the extremes of black and white. In NASA's [effect of luminance on saturation](https://colorusage.arc.nasa.gov/design_lum_1.php), they point out that there is a loss of saturation at low luminances. and also, "…the loss of saturation at high luminances–the colors converge on white."
+There is a loss of saturation at the extremes of luminance and the extremes of black and white. In NASA's [effect of luminance on saturation](https://colorusage.arc.nasa.gov/design_lum_1.php), they point out that there is a loss of saturation at low luminances, and also, "…the loss of saturation at high luminances–the colors converge on white."
 
 ## Color combinations
 
@@ -315,7 +315,7 @@ Color as in hues and saturation can affect our mood, and enhance — or de-enhan
 ## See also
 
 - [Accessibility](/en-US/docs/Web/Accessibility)
-- [Accessibility learning path](/en-US/docs/Learn/Accessibility)
+- [Accessibility learning path](/en-US/docs/Learn_web_development/Core/Accessibility)
 - CSS [`color`](/en-US/docs/Web/CSS/color) property
 - [`<color>`](/en-US/docs/Web/CSS/color_value) data type
 - [Web accessibility for seizures and physical reactions](/en-US/docs/Web/Accessibility/Seizure_disorders)

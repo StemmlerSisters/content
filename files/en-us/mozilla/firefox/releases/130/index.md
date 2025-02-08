@@ -13,7 +13,7 @@ This article provides information about the changes in Firefox 130 that affect d
 ### HTML
 
 - The [`name`](/en-US/docs/Web/HTML/Element/details#name) attribute of the `<details>` element now allows the grouping of `<details>` elements, where only one element within a group can be open at a time. This allows you to create an exclusive accordion without using JavaScript ([Firefox bug 1856460](https://bugzil.la/1856460) and [Firefox bug 1909613](https://bugzil.la/1909613)).
-- The [`dir`](/en-US/docs/Web/HTML/Global_attributes/dir) and [`lang`](/en-US/docs/Web/HTML/Global_attributes/lang) [global attributes](/en-US/docs/Web/HTML/Global_attributes) now have improved inheritance, including how they work with [shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM#attribute_inheritance) ([Firefox bug 1876163](https://bugzil.la/1876163).
+- The [`dir`](/en-US/docs/Web/HTML/Global_attributes/dir) and [`lang`](/en-US/docs/Web/HTML/Global_attributes/lang) [global attributes](/en-US/docs/Web/HTML/Global_attributes) now have improved inheritance, including how they work with [shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM#attribute_inheritance) ([Firefox bug 1876163](https://bugzil.la/1876163)).
 
 ### CSS
 
@@ -23,7 +23,7 @@ This article provides information about the changes in Firefox 130 that affect d
 ### APIs
 
 - The [X25519](/en-US/docs/Web/API/SubtleCrypto/deriveKey#x25519) digital signature algorithm is supported by the [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API), and can be used in the {{domxref("SubtleCrypto")}} methods: {{domxref("SubtleCrypto.deriveKey()", "deriveKey()")}}, {{domxref("SubtleCrypto.deriveBits()", "deriveBits()")}}, {{domxref("SubtleCrypto.generateKey()", "generateKey()")}}, {{domxref("SubtleCrypto.importKey()", "importKey()")}} and {{domxref("SubtleCrypto.exportKey()", "exportKey()")}} ([Firefox bug 1904836](https://bugzil.la/1904836)).
-- The [Web Codecs API](/en-US/docs/Web/API/WebCodecs_API) is supported on desktop releases, giving web developers low-level access to the individual frames of a video stream and chunks of audio. Android support is enabled in the Nightly release. The new interfaces include: [`VideoEncoder`](/en-US/docs/Web/API/VideoEncoder), [`VideoDecoder`](/en-US/docs/Web/API/VideoDecoder), [`EncodedVideoChunk`](/en-US/docs/Web/API/EncodedVideoChunk), [`VideoFrame`](/en-US/docs/Web/API/VideoFrame), and [`VideoColorSpace`](/en-US/docs/Web/API/VideoColorSpace). ([Firefox bug 1908572](https://bugzil.la/1908572)).
+- The [Web Codecs API](/en-US/docs/Web/API/WebCodecs_API) is supported on desktop releases, giving web developers low-level access to the individual frames of a video stream and chunks of audio. Android support is enabled in the Nightly release. The new interfaces include: [`VideoEncoder`](/en-US/docs/Web/API/VideoEncoder), [`VideoDecoder`](/en-US/docs/Web/API/VideoDecoder), [`EncodedVideoChunk`](/en-US/docs/Web/API/EncodedVideoChunk), [`VideoFrame`](/en-US/docs/Web/API/VideoFrame), [`VideoColorSpace`](/en-US/docs/Web/API/VideoColorSpace), [`AudioEncoder`](/en-US/docs/Web/API/AudioEncoder), [`EncodedAudioChunk`](/en-US/docs/Web/API/EncodedAudioChunk), [`AudioData`](/en-US/docs/Web/API/AudioData), and [`AudioDecoder`](/en-US/docs/Web/API/AudioDecoder). ([Firefox bug 1908572](https://bugzil.la/1908572)).
 
 #### Removals
 

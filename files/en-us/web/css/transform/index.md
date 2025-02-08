@@ -50,7 +50,7 @@ transform: skewY(1.07rad);
 
 /* Multiple function values */
 transform: translateX(10px) rotate(10deg) translateY(5px);
-transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg);
+transform: perspective(500px) translate3d(10px, 0, 20px) rotateY(30deg);
 
 /* Global values */
 transform: inherit;
@@ -196,4 +196,5 @@ Please see [Using CSS transforms](/en-US/docs/Web/CSS/CSS_transforms/Using_CSS_t
 - [Using CSS transforms](/en-US/docs/Web/CSS/CSS_transforms/Using_CSS_transforms)
 - {{cssxref("&lt;transform-function&gt;")}} data type with all the transform functions explained.
 - Individual CSS properties: {{cssxref('translate')}}, {{cssxref('rotate')}}, and {{cssxref('scale')}} (there is no `skew` property).
+- SVG {{SVGAttr("transform")}} attribute
 - Online tool to visualize CSS Transform functions: [CSS Transform Playground](https://css-transform.moro.es/)

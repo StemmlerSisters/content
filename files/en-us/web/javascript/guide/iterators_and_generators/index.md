@@ -4,7 +4,7 @@ slug: Web/JavaScript/Guide/Iterators_and_generators
 page-type: guide
 ---
 
-{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Typed_arrays", "Web/JavaScript/Guide/Meta_programming")}}
+{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Typed_arrays", "Web/JavaScript/Guide/Internationalization")}}
 
 Iterators and Generators bring the concept of iteration directly into the core language and provide a mechanism for customizing the behavior of {{jsxref("Statements/for...of", "for...of")}} loops.
 
@@ -32,7 +32,7 @@ The most common iterator in JavaScript is the Array iterator, which returns each
 
 While it is easy to imagine that all iterators could be expressed as arrays, this is not true. Arrays must be allocated in their entirety, but iterators are consumed only as necessary. Because of this, iterators can express sequences of unlimited size, such as the range of integers between `0` and {{jsxref("Infinity")}}.
 
-Here is an example which can do just that. It allows creation of a simple range iterator which defines a sequence of integers from `start` (inclusive) to `end` (exclusive) spaced `step` apart. Its final return value is the size of the sequence it created, tracked by the variable `iterationCount`.
+Here is an example which can do just that. It allows creation of a range iterator which defines a sequence of integers from `start` (inclusive) to `end` (exclusive) spaced `step` apart. Its final return value is the size of the sequence it created, tracked by the variable `iterationCount`.
 
 ```js
 function makeRangeIterator(start = 0, end = Infinity, step = 1) {
@@ -234,4 +234,4 @@ If the exception is not caught from within the generator, it will propagate up t
 
 Generators have a {{jsxref("Generator/return", "return()")}} method that returns the given value and finishes the generator itself.
 
-{{PreviousNext("Web/JavaScript/Guide/Typed_arrays", "Web/JavaScript/Guide/Meta_programming")}}
+{{PreviousNext("Web/JavaScript/Guide/Typed_arrays", "Web/JavaScript/Guide/Internationalization")}}

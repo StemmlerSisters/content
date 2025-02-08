@@ -38,7 +38,7 @@ An [iterable iterator object](/en-US/docs/Web/JavaScript/Reference/Global_Object
 
 ## Description
 
-The implementation of `String.prototype.matchAll` itself is very simple — it simply calls the `Symbol.matchAll` method of the argument with the string as the first parameter (apart from the extra input validation that the regex is global). The actual implementation comes from [`RegExp.prototype[Symbol.matchAll]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.matchAll).
+The implementation of `String.prototype.matchAll` doesn't do much other than calling the `Symbol.matchAll` method of the argument with the string as the first parameter (apart from the extra input validation that the regex is global). The actual implementation comes from [`RegExp.prototype[Symbol.matchAll]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.matchAll).
 
 ## Examples
 
@@ -153,9 +153,9 @@ str.matchAll({
 ## See also
 
 - [Polyfill of `String.prototype.matchAll` in `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.match()")}}
 - [Regular expressions](/en-US/docs/Web/JavaScript/Guide/Regular_expressions) guide
 - [Groups and backreferences](/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences) guide
+- {{jsxref("String.prototype.match()")}}
 - {{jsxref("RegExp")}}
 - {{jsxref("RegExp.prototype.exec()")}}
 - {{jsxref("RegExp.prototype.test()")}}

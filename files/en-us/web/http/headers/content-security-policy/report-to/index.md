@@ -18,7 +18,7 @@ The server must separately provide the mapping between endpoint names and their 
   <tbody>
     <tr>
       <th scope="row">CSP version</th>
-      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th scope="row">Directive type</th>
@@ -73,7 +73,7 @@ The JSON for a single report might look like this:
 ## Usage notes
 
 The `report-to` directive is intended to replace `report-uri`, and browsers that support `report-to` ignore the `report-uri` directive.
-However, until `report-to` is broadly supported you can specify both headers as shown:
+However, until `report-to` is broadly supported you can specify both directives as shown:
 
 ```http
 Content-Security-Policy: …; report-uri https://endpoint.example.com; report-to endpoint_name

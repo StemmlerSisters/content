@@ -33,7 +33,7 @@ Note that properties which are objects (e.g., for overriding the prototype of bu
   - : This property indicates whether the current window is closed or not.
 - {{domxref("Window.console")}} {{ReadOnlyInline}}
   - : Returns a reference to the console object which provides access to the browser's debugging console.
-- {{domxref("Window.cookieStore")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{SecureContext_Inline}}
+- {{domxref("Window.cookieStore")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
   - : Returns a reference to the {{domxref("CookieStore")}} object for the current document context.
 - {{domxref("Window.credentialless")}} {{ReadOnlyInline}} {{Experimental_Inline}}
   - : Returns a boolean that indicates whether the current document was loaded inside a credentialless {{htmlelement("iframe")}}. See [IFrame credentialless](/en-US/docs/Web/Security/IFrame_credentialless) for more details.
@@ -68,7 +68,7 @@ Note that properties which are objects (e.g., for overriding the prototype of bu
 - {{domxref("Window.isSecureContext")}} {{ReadOnlyInline}}
   - : Returns a boolean indicating whether the current context is secure (`true`) or not (`false`).
 - {{domxref("Window.launchQueue")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : When a [progressive web app](/en-US/docs/Web/Progressive_web_apps) (PWA) is launched with a [`launch_handler`](/en-US/docs/Web/Manifest/launch_handler) `client_mode` value of `focus-existing`, `navigate-new`, or `navigate-existing`, the `launchQueue` provides access to the {{domxref("LaunchQueue")}} class, which allows custom launch navigation handling to be implemented for the PWA.
+  - : When a [progressive web app](/en-US/docs/Web/Progressive_web_apps) (PWA) is launched with a [`launch_handler`](/en-US/docs/Web/Manifest/Reference/launch_handler) `client_mode` value of `focus-existing`, `navigate-new`, or `navigate-existing`, the `launchQueue` provides access to the {{domxref("LaunchQueue")}} class, which allows custom launch navigation handling to be implemented for the PWA.
 - {{domxref("Window.length")}} {{ReadOnlyInline}}
   - : Returns the number of frames in the window. See also {{domxref("window.frames")}}.
 - {{domxref("Window.localStorage")}} {{ReadOnlyInline}}
@@ -257,8 +257,6 @@ _This interface inherits methods from the {{domxref("EventTarget")}} interface._
   - : This method stops window loading.
 - {{domxref("Window.structuredClone()")}}
   - : Creates a [deep clone](/en-US/docs/Glossary/Deep_copy) of a given value using the [structured clone algorithm](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm).
-- {{domxref("Window.updateCommands()")}} {{Non-standard_Inline}}
-  - : Updates the state of commands of the current chrome window (UI).
 
 ### Deprecated methods
 
@@ -346,11 +344,11 @@ Listen to these events using [`addEventListener()`](/en-US/docs/Web/API/EventTar
   - : Fired when the fragment identifier of the URL has changed (the part of the URL beginning with and following the `#` symbol).
 - {{domxref("Window/pagehide_event", "pagehide")}}
   - : Sent when the browser hides the current document while in the process of switching to displaying in its place a different document from the session's history. This happens, for example, when the user clicks the Back button or when they click the Forward button to move ahead in session history.
-- {{domxref("Window.pagereveal_event", "pagereveal")}} {{experimental_inline}}
+- {{domxref("Window.pagereveal_event", "pagereveal")}}
   - : Fired when a document is first rendered, either when loading a fresh document from the network or activating a document (either from [back/forward cache](/en-US/docs/Glossary/bfcache) (bfcache) or [prerender](/en-US/docs/Glossary/Prerender)).
 - {{domxref("Window/pageshow_event", "pageshow")}}
   - : Sent when the browser makes the document visible due to navigation tasks, including not only when the page is first loaded, but also situations such as the user navigating back to the page after having navigated to another within the same tab.
-- {{domxref("Window.pageswap_event", "pageswap")}} {{experimental_inline}}
+- {{domxref("Window.pageswap_event", "pageswap")}}
   - : Fired when a document is about to be unloaded due to a navigation.
 - {{domxref("Window/popstate_event", "popstate")}}
   - : Fired when the active history entry changes.
@@ -391,6 +389,13 @@ Listen to these events using [`addEventListener()`](/en-US/docs/Web/API/EventTar
   - : Sent every time a JavaScript {{jsxref("Promise")}} is rejected, regardless of whether or not there is a handler in place to catch the rejection.
 - {{domxref("Window/unhandledrejection_event", "unhandledrejection")}}
   - : Sent when a JavaScript {{jsxref("Promise")}} is rejected but there is no handler in place to catch the rejection.
+
+### Scroll events
+
+- {{domxref("Window/scrollsnapchange_event", "scrollsnapchange")}} {{experimental_inline}}
+  - : Fired on the scroll container at the end of a scrolling operation when a new scroll snap target has been selected.
+- {{domxref("Window/scrollsnapchanging_event", "scrollsnapchanging")}} {{experimental_inline}}
+  - : Fired on the scroll container when the browser determines a new scroll snap target is pending, i.e. it will be selected when the current scroll gesture ends.
 
 ### Deprecated events
 

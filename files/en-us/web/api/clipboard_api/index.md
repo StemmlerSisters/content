@@ -27,7 +27,7 @@ The Clipboard API allows users to programmatically read and write text and other
 
 Events are fired as the result of {{domxref("Element/cut_event", "cut")}}, {{domxref("Element/copy_event", "copy")}}, and {{domxref("Element/paste_event", "paste")}} operations modifying the clipboard.
 The events have a default action, for example the `copy` action copies the current selection to the system clipboard by default.
-The default action can be overriden by the event handler — see each of the events for more information.
+The default action can be overridden by the event handler — see each of the events for more information.
 
 ## Interfaces
 
@@ -96,7 +96,7 @@ Firefox [Web Extensions](/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with
 The system clipboard is accessed through the {{domxref("Navigator.clipboard")}} global.
 
 This snippet fetches the text from the clipboard and appends it to the first element found with the class `editor`.
-Since {{domxref("Clipboard.readText", "readText()")}} (and {{domxref("Clipboard.read", "read()")}}, for that matter) returns an empty string if the clipboard isn't text, this code is safe.
+Since {{domxref("Clipboard.readText", "readText()")}} returns an empty string if the clipboard isn't text, this code is safe.
 
 ```js
 navigator.clipboard

@@ -5,14 +5,14 @@ page-type: http-header
 status:
   - experimental
 browser-compat: http.headers.No-Vary-Search
-spec-urls: https://wicg.github.io/nav-speculation/no-vary-search.html
 ---
 
 {{HTTPSidebar}}{{SeeCompatTable}}
 
-The **`No-Vary-Search`** response header specifies a set of rules that define how a URL's query parameters will affect cache matching. These rules dictate whether the same URL with different URL parameters should be saved as separate browser cache entries.
+The HTTP **`No-Vary-Search`** {{Glossary("response header")}} specifies a set of rules that define how a URL's query parameters will affect cache matching.
+These rules dictate whether the same URL with different URL parameters should be saved as separate browser cache entries.
 
-> **Note:** [Speculation rules](/en-US/docs/Web/API/Speculation_Rules_API) can include an `expects_no_vary_search` field, which indicates to the browser what the expected `No-Vary-Search` value will be (if any) for documents that it is receiving prefetch/prerender requests for via the speculation rules. The browser can use this to determine ahead of time whether it is more useful to wait for an existing prefetch/prerender to finish, or start a new fetch request when the speculation rule is matched.
+This allows the browser to reuse existing resources despite mismatching URL parameters to avoid the expense of fetching the resource again, when the same content will be returned.
 
 <table class="properties">
   <tbody>
@@ -22,7 +22,7 @@ The **`No-Vary-Search`** response header specifies a set of rules that define ho
     </tr>
     <tr>
       <th scope="row">{{Glossary("Forbidden header name")}}</th>
-      <td>no</td>
+      <td>No</td>
     </tr>
   </tbody>
 </table>
@@ -32,20 +32,38 @@ The **`No-Vary-Search`** response header specifies a set of rules that define ho
 ```http
 No-Vary-Search: key-order
 No-Vary-Search: params
-No-Vary-Search: params=("param1" "param2" "utm_campaign")
+No-Vary-Search: params=("param1" "param2")
 No-Vary-Search: params, except=("param1" "param2")
+No-Vary-Search: key-order, params, except=("param1")
 ```
 
 ## Directives
 
-- `key-order`
-  - : A boolean. If included in the header value, it indicates that differences in the order of parameters between otherwise identical URLs will not cause them to be cached as separate entries. Differences in the parameters present _will_ cause them to be cached separately.
-- `params`
+- `key-order` {{optional_inline}}
+  - : Indicates that URLs will not be cached as separate entries if _the order_ in which parameters appear in the URL is the only difference.
+    The presence of other parameters _will_ cause URLs to be cached separately.
+- `params` {{optional_inline}}
   - : Either a boolean or a list of strings:
-    - If included in the header value as a boolean, it indicates that differences in parameters between otherwise identical URLs will not cause them to be cached as separate entries.
-    - If included in the header value as a list, it indicates that the presence of the specific parameters listed will not cause otherwise identical URLs to be cached as separate entries. The presence of other parameters _will_ cause them to be cached separately.
-- `except`
-  - : A list of strings. If included in the header value, it indicates that the presence of the specific parameters listed _will_ cause otherwise identical URLs to be cached as separate entries. The presence of other parameters _won't_ cause them to be cached separately. A boolean `params` directive has to be included along with `except` for it to take effect.
+    - As a boolean (`params`), it indicates that URLs that differ only by their parameters will not be cached as separate entries.
+    - An inner list of space-separated strings (`params=("param1" "param2")`).
+      Indicates that URLs that differ only by the listed parameters will not be cached as separate entries.
+      The presence of other parameters _will_ cause them to be cached separately.
+- `except` {{optional_inline}}
+  - : An inner list of space-separated strings (`except=("param1" "param2")`).
+    Indicates that URLs that differ only by the listed parameters _will_ be cached as separate entries.
+    A boolean `params` directive has to be included for it to take effect (`params, except=("param1" "param2")`).
+    The presence of other parameters that are not in the `except=` list _won't_ cause URLs to be cached as separate entries.
+
+## Description
+
+### Relationship with the Speculation Rules API
+
+The [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API) supports using the `No-Vary-Search` header to reuse an existing prefetched or prerendered page for different URL parameters — if they are included in the `No-Vary-Search` header.
+
+> [!WARNING]
+> Additional care must be taken when using prerender with `No-Vary-Search` since the page may initially be prerendered with different URL parameters. `No-Vary-Search` is used for URL parameters that deliver the same resource from the server, but are used by the client for various reasons (client-side rendering, UTM parameters for analytics measurement, etc.). As the initial prerender may be for different URL parameters, any code depending on them should only run after prerender activation.
+
+The Speculation Rules API can also include an `expects_no_vary_search` field, which indicates to the browser what the expected `No-Vary-Search` value will be (if any) for documents that it is receiving prefetch/prerender requests for via the speculation rules. The browser can use this to determine ahead of time whether it is more useful to wait for an existing prefetch/prerender to finish, or start a new fetch request when the speculation rule is matched. See the ["expects_no_vary_search" example](/en-US/docs/Web/HTML/Element/script/type/speculationrules#expects_no_vary_search_example) for an explanation of how this can be used.
 
 ## Examples
 
@@ -99,6 +117,9 @@ You could get the browser to ignore all of these when considering cache matching
 No-Vary-Search: params=("id" "order" "lang")
 ```
 
+> [!NOTE]
+> As a [structured field](https://www.rfc-editor.org/rfc/rfc8941) the array of parameters should be space-separated quoted strings as shown above, and not comma-separated, which developers may be more used to.
+
 If you wanted the browser to ignore all of them _and_ any others that might be present when cache matching, you could use the boolean form of `params`:
 
 ```http
@@ -122,3 +143,7 @@ No-Vary-Search: params, except=("id")
 ## Browser compatibility
 
 {{Compat}}
+
+## See also
+
+- [HTTP Caching: Vary](/en-US/docs/Web/HTTP/Caching#vary) and {{HTTPHeader("Vary")}} header

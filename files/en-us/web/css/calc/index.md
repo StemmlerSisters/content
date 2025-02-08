@@ -27,7 +27,7 @@ calc(var(--hue) + 180)
 lch(from aquamarine l c calc(h + 180))
 ```
 
-The `calc()` function takes a single expression as its parameter, and the expression's result is used as the value for a CSS property. In this expression, the {{Glossary("operand", "operands")}} can be combined using the {{Glossary("operator", "operators")}} listed below. When the expression contains multiple operands, `calc()` uses the standard [operator precedence rules](/en-US/docs/Learn/JavaScript/First_steps/Math#operator_precedence):
+The `calc()` function takes a single expression as its parameter, and the expression's result is used as the value for a CSS property. In this expression, the {{Glossary("operand", "operands")}} can be combined using the {{Glossary("operator", "operators")}} listed below. When the expression contains multiple operands, `calc()` uses the standard [operator precedence rules](/en-US/docs/Learn_web_development/Core/Scripting/Math#operator_precedence):
 
 - `+`
   - : Adds the specified operands.
@@ -52,6 +52,8 @@ There's a few points to keep in mind about `calc()`:
 - The `calc()` function cannot directly substitute the numeric value for percentage types; for instance `calc(100 / 4)%` is invalid, while `calc(100% / 4)` is valid.
 
 - When `calc()` is used where an {{cssxref("&lt;integer&gt;")}} is expected, the value will be rounded to the nearest integer. So, `calc(1.4)` will result in a value of `1`. If the fractional part of the value is exactly `0.5`, the value will be rounded up. For example, `calc(1.5)` will result in a value of `2`, while `calc(-1.5)` will round to `-1`.
+
+- `calc()` cannot perform calculations on [intrinsic size values](/en-US/docs/Glossary/Intrinsic_Size) such as {{cssxref("auto")}} and {{cssxref("fit-content")}}. Use the {{cssxref("calc-size()")}} function instead.
 
 ### Rules and best practices while using `calc()`
 

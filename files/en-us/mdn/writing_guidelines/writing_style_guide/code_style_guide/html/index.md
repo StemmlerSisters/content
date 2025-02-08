@@ -2,9 +2,8 @@
 title: Guidelines for writing HTML code examples
 slug: MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/HTML
 page-type: mdn-writing-guide
+sidebar: mdnsidebar
 ---
-
-{{MDNSidebar}}
 
 The following guidelines cover how to write HTML example code for MDN Web Docs.
 
@@ -41,9 +40,9 @@ Set the document language using the [`lang`](/en-US/docs/Web/HTML/Global_attribu
 
 This is good for accessibility and search engines, helps with localizing content, and reminds people to use best practices.
 
-### Document characterset
+### Document character set
 
-You should also define your document's characterset like so:
+You should also define your document's character set like so:
 
 ```html example-good
 <meta charset="utf-8" />

@@ -176,7 +176,6 @@ The HTTP/2 protocol differs from HTTP/1.1 in a few ways:
 - It's a binary protocol rather than a text protocol. It can't be read and created manually. Despite this hurdle, it allows for the implementation of improved optimization techniques.
 - It's a multiplexed protocol. Parallel requests can be made over the same connection, removing the constraints of the HTTP/1.x protocol.
 - It compresses headers. As these are often similar among a set of requests, this removes the duplication and overhead of data transmitted.
-- It allows a server to populate data in a client cache through a mechanism called the server push.
 
 Officially standardized in May 2015, HTTP/2 use peaked in January 2022 at 46.9% of all websites (see [these stats](https://w3techs.com/technologies/details/ce-http2)). High-traffic websites showed the most rapid adoption in an effort to save on data transfer overhead and subsequent budgets.
 
@@ -197,3 +196,16 @@ The next major version of HTTP, HTTP/3 has the same semantics as earlier version
 QUIC is designed to provide much lower latency for HTTP connections. Like HTTP/2, it is a multiplexed protocol, but HTTP/2 runs over a single TCP connection, so packet loss detection and retransmission handled at the TCP layer can block all streams. QUIC runs multiple streams over {{Glossary("UDP")}} and implements packet loss detection and retransmission independently for each stream, so that if an error occurs, only the stream with data in that packet is blocked.
 
 Defined in {{RFC("9114")}}, [HTTP/3 is supported by most major browsers](https://caniuse.com/http3) including Chromium (and its variants such as Chrome and Edge) and Firefox.
+
+## See also
+
+- [Connection management in HTTP/1.x](/en-US/docs/Web/HTTP/Connection_management_in_HTTP_1.x)
+- [Protocol upgrade mechanism](/en-US/docs/Web/HTTP/Protocol_upgrade_mechanism)
+- [HTTP resources and specifications](/en-US/docs/Web/HTTP/Resources_and_specifications)
+- Glossary terms:
+  - {{glossary('HTTP')}}
+  - {{glossary('HTTP_2', 'HTTP/2')}}
+  - {{glossary('QUIC')}}
+  - {{glossary('Round Trip Time', 'Round Trip Time (RTT)')}}
+  - {{glossary('TCP slow start')}}
+  - {{glossary('TCP', 'Transmission Control Protocol (TCP)')}}
